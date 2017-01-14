@@ -1,0 +1,31 @@
+{
+  "name": "react-redux-connect-helpers",
+  "version": "1.0.0",
+  "description": "Helpful set of functions for connecting redux state to react components.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rongierlach/react-redux-connect-helpers.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "react-redux",
+    "connect",
+    "helper",
+    "functions",
+    "helpers",
+    "state",
+    "mapStateToProps",
+    "mapDispatchToProps"
+  ],
+  "author": "https://github.com/rongierlach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rongierlach/react-redux-connect-helpers/issues"
+  },
+  "homepage": "https://github.com/rongierlach/react-redux-connect-helpers#readme"
+}

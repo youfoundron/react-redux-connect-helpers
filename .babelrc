@@ -1,4 +1,4 @@
 {
-  "presets": ["es2015", "babili"],
+  "presets": ["es2015"],
   "plugins": ["ramda"]
 }

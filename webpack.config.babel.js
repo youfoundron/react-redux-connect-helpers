@@ -28,9 +28,8 @@ export default {
     ]
   },
   externals: {
-    react: 'React',
-    redux: 'Redux',
-    'react-redux': 'ReactRedux'
+    'react': 'React',
+    'redux': 'Redux'
   },
   stats: {
     chunks: true,

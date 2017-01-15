@@ -568,6 +568,12 @@ babel-plugin-transform-remove-undefined@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-remove-undefined/-/babel-plugin-transform-remove-undefined-0.0.3.tgz#34baeb7bde4fc01d5235304ee891e7b6bff00432"
 
+babel-plugin-transform-runtime@^6.15.0:
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.15.0.tgz#3d75b4d949ad81af157570273846fb59aeb0d57c"
+  dependencies:
+    babel-runtime "^6.9.0"
+
 babel-plugin-transform-simplify-comparison-operators@^6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-simplify-comparison-operators/-/babel-plugin-transform-simplify-comparison-operators-6.8.0.tgz#0183d65bfdc54c80d922a3a9b3008e25fa9d32a7"

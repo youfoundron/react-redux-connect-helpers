@@ -1,4 +1,5 @@
 import { resolve } from 'path'
+import { optimize } from 'webpack'
 
 const makeRule = (ext, loader, enforce, exclude, include) => ({
   test: typeof ext === 'string'
@@ -31,6 +32,11 @@ export default {
     'react': 'React',
     'redux': 'Redux'
   },
+  plugins: [
+    new optimize.UglifyJsPlugin({
+      comments: false
+    })
+  ],
   stats: {
     chunks: true,
     colors: true,

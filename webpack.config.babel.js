@@ -27,6 +27,11 @@ export default {
       makeRule(/\.jsx?$/, 'babel-loader')
     ]
   },
+  externals: {
+    react: 'React',
+    redux: 'Redux',
+    'react-redux': 'ReactRedux'
+  },
   stats: {
     chunks: true,
     colors: true,

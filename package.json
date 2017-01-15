@@ -4,7 +4,7 @@
   "description": "Helpful set of functions for connecting redux state to react components.",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "webpack",
     "clean": "rimraf lib",
     "prepublish": "npm run clean && npm run build",
     "test": "mocha --compilers js:babel-register"

@@ -30,7 +30,8 @@ export default {
   },
   externals: {
     'react': 'React',
-    'redux': 'Redux'
+    'redux': 'Redux',
+    'react-redux': 'ReactRedux'
   },
   plugins: [
     new optimize.UglifyJsPlugin({

@@ -34,10 +34,7 @@
     "url": "https://github.com/rongierlach/react-redux-connect-helpers/issues"
   },
   "homepage": "https://github.com/rongierlach/react-redux-connect-helpers#readme",
-  "dependencies": {
-    "ramda": "^0.23.0",
-    "react-redux": "^5.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
@@ -47,11 +44,15 @@
     "babel-runtime": "^6.20.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
+    "ramda": "^0.23.0",
     "react": "^15.4.2",
     "redux": "^3.6.0",
     "rimraf": "^2.5.4",
     "standard": "^8.6.0",
     "standard-loader": "^5.0.0",
     "webpack": "2.2.0-rc.1"
+  },
+  "peerDependencies": {
+    "react-redux": "^5.0.2"
   }
 }

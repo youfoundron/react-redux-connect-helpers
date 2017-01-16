@@ -46,13 +46,13 @@
     "mocha": "^3.2.0",
     "ramda": "^0.23.0",
     "react": "^15.4.2",
-    "redux": "^3.6.0",
     "rimraf": "^2.5.4",
     "standard": "^8.6.0",
     "standard-loader": "^5.0.0",
     "webpack": "2.2.0-rc.1"
   },
   "peerDependencies": {
-    "react-redux": "^5.0.2"
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
   }
 }

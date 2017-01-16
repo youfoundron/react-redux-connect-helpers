@@ -10,11 +10,51 @@ Compose your connectors at will and build the connected component of your dreams
 
 ## Usage
 
+    import React from 'react'
+    import { compose } from 'react-redux'
     import {
       connectValue,
       connectStateValue,
       createActionConnector
     } from 'react-redux-connect-helpers'
+
+    // 1. Given a component we wish to connect to state
+    const ButtonWithText = props =>
+      <button
+        className={props.active ? 'active' : ''}
+        onClick={props.onClick}
+      >
+        {props.text}
+      </button>
+
+    // 2. And action creators to be bound to dispatch (optional)
+    const actionCreators = {
+      toggleMenuActiveState: () => ({
+        type: 'TOGGLE_MENU_ACTIVE_STATE',
+        payload: null
+      })
+    }
+
+    // 3. We can connect property 'text' as value 'Menu'
+    const textPropConnector = connectValue('Menu', 'text')
+
+    // 4. We can connect property 'active' as value at state.menu.active
+    const activePropConnector = connectValueInState(['menu', 'active'], 'active')
+
+    // 5. We can create an action connecting helper for our actionCreators
+    const connectAction = createActionConnector(actionCreators)
+
+    // 6. And then connect property 'onClick' as a bound action creator toggleMenuActiveState
+    const onClickPropConnector = connectAction('toggleMenuActiveState', 'onClick')
+
+    // 7. Finally, we can compose, and connect our component
+    const ToggleMenuButton = compose(
+      textPropConnector
+      activePropConnector,
+      onClickPropConnector
+    )(ButtonWithText)
+
+    export default ToggleMenuButton
 
 ## API Reference
 
@@ -26,9 +66,9 @@ Returns a function that connects a value in state to a React component as a prop
 
 **Parameters**
 
--   `pathArray` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)> | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))** 
--   `propName` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `transformValue` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+-   `pathArray` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)> | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))**
+-   `propName` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `transformValue` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
 
 **Examples**
 
@@ -52,8 +92,8 @@ Returns a function that connects a value to a React component as a prop
 
 **Parameters**
 
--   `value` **any** 
--   `propName` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `value` **any**
+-   `propName` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 **Examples**
 
@@ -72,7 +112,7 @@ A higher order function that returns a function to connect bound actions to Reac
 
 **Parameters**
 
--   `actionCreators` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `actionCreators` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
 
 **Examples**
 

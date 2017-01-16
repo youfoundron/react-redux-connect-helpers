@@ -1,4 +1,5 @@
-import { connect, bindActionCreators } from 'react-redux'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 /**
  * A higher order function that returns a function to connect bound actions to React components as props

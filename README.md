@@ -47,7 +47,7 @@ const connectAction = createActionConnector(actionCreators)
 // 6. And then connect property 'onClick' as a bound action creator toggleMenuActiveState
 const onClickPropConnector = connectAction('toggleMenuActiveState', 'onClick')
 
-// 7. Finally, we can compose, and connect our component
+// 7. Finally, we can connect our component with all the desired props
 const ToggleMenuButton = compose(
   textPropConnector
   activePropConnector,

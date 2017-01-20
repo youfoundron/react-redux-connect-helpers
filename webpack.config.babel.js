@@ -33,9 +33,9 @@ export default {
     'react-redux': 'ReactRedux'
   },
   plugins: [
-    // new optimize.UglifyJsPlugin({
-    //   comments: false
-    // })
+    new optimize.UglifyJsPlugin({
+      comments: false
+    })
   ],
   stats: {
     chunks: true,

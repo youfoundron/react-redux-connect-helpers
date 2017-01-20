@@ -3,7 +3,7 @@
 A helpful set of functions for connecting redux state to react components.  
 Compose your connectors at will and build the connected component of your dreams... 😴
 
-[![Dependency Status](https://david-dm.org/rongierlach/react-redux-connect-helpers.svg)](https://david-dm.org/rongierlach/react-redux-connect-helpers) [![devDependency Status](https://david-dm.org/rongierlach/react-redux-connect-helpers/dev-status.svg)](https://david-dm.org/rongierlach/react-redux-connect-helpers#info=devDependencies)
+[![Build Status](https://travis-ci.org/rongierlach/react-redux-connect-helpers.svg?branch=master)](https://travis-ci.org/rongierlach/react-redux-connect-helpers) [![Dependency Status](https://david-dm.org/rongierlach/react-redux-connect-helpers.svg)](https://david-dm.org/rongierlach/react-redux-connect-helpers) [![devDependency Status](https://david-dm.org/rongierlach/react-redux-connect-helpers/dev-status.svg)](https://david-dm.org/rongierlach/react-redux-connect-helpers#info=devDependencies)
 ## Installation
 
 `$ npm install react-redux-connect-helpers`

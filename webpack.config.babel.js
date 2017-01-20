@@ -29,14 +29,13 @@ export default {
     ]
   },
   externals: {
-    'react': 'React',
     'redux': 'Redux',
     'react-redux': 'ReactRedux'
   },
   plugins: [
-    new optimize.UglifyJsPlugin({
-      comments: false
-    })
+    // new optimize.UglifyJsPlugin({
+    //   comments: false
+    // })
   ],
   stats: {
     chunks: true,

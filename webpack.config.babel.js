@@ -1,20 +1,6 @@
 import { resolve } from 'path'
 import { optimize } from 'webpack'
-
-const makeRule = (ext, loader, enforce, exclude, include) => ({
-  test: typeof ext === 'string'
-    ? RegExp(`/.${ext}$/`)
-    : ext,
-  use: typeof loader === 'string'
-    ? loader
-    : loader || `${ext}-loader`,
-  enforce:
-    enforce || undefined,
-  exclude:
-    exclude || /node_modules/,
-  include:
-    include || undefined
-})
+import makeRule from 'webpack-make-rule'
 
 export default {
   entry: resolve(__dirname, './src/index.js'),

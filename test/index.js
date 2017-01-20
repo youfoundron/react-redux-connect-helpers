@@ -1,42 +1,40 @@
-import fs from 'fs'
-import path from 'path'
 import { expect } from 'chai'
-import reactReduxConnectHelpers from '../src'
-import { transformFileSync } from 'babel-core'
 
-function testTransformation (actual, expected) {
-  let actualVal, expectedVal
+describe('jsDom', () => {
+  describe('#window', () => {
+    it('should exist in global scope', () => {
+      expect(window).to.exist
+    })
 
-  try {
-    actualVal = eval(actual)
-    expectedVal = eval(expected)
-  } catch (err) {
-    console.log('    Cannot transform the src!')
-    expect(eval(actual)).to.not.throw(Error)
-  }
-
-  console.log(
-    `    (${actualVal} === ${expectedVal}) // =>`,
-    actualVal === expectedVal
-  )
-  expect(actualVal).to.equal(expectedVal)
-}
-
-describe('ReactReduxConnectHelpersTest', () => {
-  const fixturesDir = path.join(__dirname, 'fixtures')
-  const options = { presets: ['es2015'], plugins: [reactReduxConnectHelpers] }
-
-  fs.readdirSync(fixturesDir).map((caseName) => {
-    it(`should ${caseName.split('-').join(' ')}`, () => {
-      // paths
-      const fixtureDir = path.join(fixturesDir, caseName)
-      const actualPath = path.join(fixtureDir, 'actual.js')
-      const expectedPath = path.join(fixtureDir, 'expected.js')
-      // scripts
-      const actual = transformFileSync(actualPath, options).code
-      const expected = fs.readFileSync(expectedPath).toString()
-      // Test it!
-      testTransformation(actual, expected)
+    it('should be merged into global scope', () => {
+      const windowKeys = Object.keys(window)
+      expect(global).to.have.any.keys(windowKeys)
     })
   })
+
+  describe('#document', () => {
+    it('should exist in global scope', () => {
+      expect(document).to.exist
+    })
+
+    it('should be queryable', () => {
+      const e = document.getElementById('react-app')
+      expect(e).to.exist
+    })
+  })
+})
+
+describe('react-redux-connect-helpers', () => {
+  describe('#connectStateValue', () => {
+
+  })
+
+  describe('#connectValue', () => {
+
+  })
+
+  describe('#createActionConnector', () => {
+
+  })
+
 })

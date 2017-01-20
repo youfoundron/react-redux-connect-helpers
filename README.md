@@ -39,7 +39,7 @@ const actionCreators = {
 const textPropConnector = connectValue('Menu', 'text')
 
 // 4. We can connect property 'active' as value at state.menu.active
-const activePropConnector = connectValueInState(['menu', 'active'], 'active')
+const activePropConnector = connectStateValue(['menu', 'active'], 'active')
 
 // 5. We can create an action connecting helper for our actionCreators
 const connectAction = createActionConnector(actionCreators)

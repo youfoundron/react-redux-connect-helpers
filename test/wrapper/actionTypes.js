@@ -1,0 +1,3 @@
+export default {
+  TOGGLE_MENU_ACTIVE_STATE: 'TOGGLE_MENU_ACTIVE_STATE'
+}

@@ -1,10 +1,18 @@
-import R, { always, identity } from 'ramda'
+import {
+  ifElse,
+  isArrayLike,
+  lensPath,
+  lensProp,
+  view,
+  last,
+  identity
+} from 'ramda'
 
 /**
  * Returns a Ramda lens object for the given path array
  * @param {Array.<string>|string} pathArray
  */
-const getLensFromPathArray = R.ifElse(R.isArrayLike, R.lensPath, R.lensProp)
+const getLensFromPathArray = ifElse(isArrayLike, lensPath, lensProp)
 
 /**
  * Returns the value at the end of the path for the given object
@@ -12,17 +20,15 @@ const getLensFromPathArray = R.ifElse(R.isArrayLike, R.lensPath, R.lensProp)
  * @param {object} object
  */
 const getValueFromPathArray = (pathArray, object) =>
-  R.view(getLensFromPathArray(pathArray), object)
+  view(getLensFromPathArray(pathArray), object)
 
 /**
  * Returns the property name inferred from the given path array
  * @param {Array.<string>|string} pathArray
  */
-const getPropNameFromPathArray = R.ifElse(R.isArrayLike, R.last, identity)
+const getPropNameFromPathArray = ifElse(isArrayLike, last, identity)
 
 export {
-  always,
-  identity,
   getLensFromPathArray,
   getValueFromPathArray,
   getPropNameFromPathArray

@@ -1,5 +1,6 @@
+import { identity } from 'ramda'
 import { connect } from 'react-redux'
-import { identity, getValueFromPathArray, getPropNameFromPathArray } from './util'
+import { getValueFromPathArray, getPropNameFromPathArray } from './util'
 
 /**
  * Returns a function that connects a value in state to a React component as a prop

@@ -1,5 +1,5 @@
 import connectStateValue from './connectStateValue'
-import { always } from './util'
+import { always } from 'ramda'
 
 /**
  * Returns a function that connects a value to a React component as a prop

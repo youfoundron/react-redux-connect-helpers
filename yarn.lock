@@ -3762,9 +3762,9 @@ webidl-conversions@^3.0.0, webidl-conversions@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
 
-webpack-make-rule@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/webpack-make-rule/-/webpack-make-rule-1.1.0.tgz#5b0bbcb62716b74b22153de04d8ed1d3def53404"
+webpack-make-rule@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/webpack-make-rule/-/webpack-make-rule-1.1.1.tgz#fe654ba1e500ad8b4db40963e8fe369d48603c10"
 
 webpack-sources@^0.1.0:
   version "0.1.3"

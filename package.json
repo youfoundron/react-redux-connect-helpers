@@ -1,6 +1,6 @@
 {
   "name": "react-redux-connect-helpers",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "Helpful set of functions for connecting redux state to react components.",
   "main": "lib/index.js",
   "scripts": {

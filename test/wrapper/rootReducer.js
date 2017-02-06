@@ -2,19 +2,21 @@ import R from 'ramda'
 import types from './actionTypes'
 import initialState from './initialState'
 
-const menuLens = R.lensProp('menu')
-const menuActiveLens = R.compose(
-  menuLens,
-  R.lensProp('active')
-)
+const menuActivePathArray = ['menu', 'active']
 
-const toggleValue = lens => state => R.compose(
-  R.set(lens, R.__, state),
+const setValue = pathArray => state => value =>
+  state.setIn(pathArray, value)
+
+const getValue = pathArray => state =>
+  state.getIn(pathArray)
+
+const toggleValue = pathArray => state => R.compose(
+  setValue(pathArray)(state),
   R.not,
-  R.view(lens)
+  getValue(pathArray)
 )(state)
 
-const toggleMenuActiveValue = toggleValue(menuActiveLens)
+const toggleMenuActiveValue = toggleValue(menuActivePathArray)
 
 export default (state = initialState, action) => {
   switch (action.type) {

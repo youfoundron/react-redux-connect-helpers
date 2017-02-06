@@ -1,5 +1,7 @@
-export default {
+import { fromJS } from 'immutable'
+
+export default fromJS({
   menu: {
     active: false
   }
-}
+})

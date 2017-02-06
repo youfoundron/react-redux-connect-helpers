@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 /**
  * A higher order function that returns a function to connect bound actions to React components as props
@@ -9,6 +8,7 @@ export default (actionCreators = {}) =>
   (actionName, propName = actionName) =>
     connect(null,
       dispatch => ({
-        [propName]: bindActionCreators(actionCreators, dispatch)[actionName]
+        [propName]: (...args) => // bind the action creator to dispatch
+          dispatch(actionCreators[actionName](...args))
       })
     )

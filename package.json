@@ -63,7 +63,6 @@
     "webpack-make-rule": "1.1.1"
   },
   "peerDependencies": {
-    "react-redux": "^5.0.2",
-    "redux": "^3.6.0"
+    "react-redux": "^5.0.2"
   }
 }

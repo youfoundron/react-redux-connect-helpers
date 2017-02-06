@@ -17,12 +17,6 @@ export default {
     ]
   },
   externals: {
-    'redux': {
-      commonjs: 'redux',
-      commonjs2: 'redux',
-      amd: 'redux',
-      root: 'Redux'
-    },
     'react-redux': {
       commonjs: 'react-redux',
       commonjs2: 'react-redux',

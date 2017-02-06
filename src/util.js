@@ -1,26 +1,28 @@
 import {
   ifElse,
   isArrayLike,
-  lensPath,
-  lensProp,
-  view,
   last,
   identity
 } from 'ramda'
 
 /**
- * Returns a Ramda lens object for the given path array
- * @param {Array.<string>|string} pathArray
+ * Takes any number of arguments and puts them in an array
  */
-const getLensFromPathArray = ifElse(isArrayLike, lensPath, lensProp)
+const toArray = (...args) => [...args]
 
 /**
- * Returns the value at the end of the path for the given object
+ * Returns the given path array, handles string values
  * @param {Array.<string>|string} pathArray
- * @param {object} object
  */
-const getValueFromPathArray = (pathArray, object) =>
-  view(getLensFromPathArray(pathArray), object)
+const normalizePathArray = ifElse(isArrayLike, identity, toArray)
+
+/**
+ * Returns the value at the end of the path for the given Immutable Map
+ * @param {Array.<string>|string} pathArray
+ * @param {Immutable Structure} immutable
+ */
+const getValueFromPathArray = (pathArray, immutable) =>
+  immutable.getIn(normalizePathArray(pathArray))
 
 /**
  * Returns the property name inferred from the given path array
@@ -29,7 +31,6 @@ const getValueFromPathArray = (pathArray, object) =>
 const getPropNameFromPathArray = ifElse(isArrayLike, last, identity)
 
 export {
-  getLensFromPathArray,
   getValueFromPathArray,
   getPropNameFromPathArray
 }

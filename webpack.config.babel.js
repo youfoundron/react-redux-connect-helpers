@@ -2,11 +2,15 @@ import { resolve } from 'path'
 import { optimize } from 'webpack'
 import makeRule from 'webpack-make-rule'
 
+const index = resolve(__dirname, './src/index.js')
+const immutable = resolve(__dirname, './src/immutable/index.js')
+const path = resolve(__dirname, './lib/')
+
 export default {
-  entry: resolve(__dirname, './src/index.js'),
+  entry: {index, immutable},
   output: {
-    path: resolve(__dirname, './lib/'),
-    filename: 'index.js',
+    path,
+    filename: '[name].js',
     library: 'ReactReduxConnectHelpers',
     libraryTarget: 'umd'
   },

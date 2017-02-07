@@ -28,8 +28,7 @@ const getValueFromPathArray = (pathArray, object) =>
  */
 const getPropNameFromPathArray = ifElse(isArrayLike, last, identity)
 
-export {
-  getLensFromPathArray,
+export default {
   getValueFromPathArray,
   getPropNameFromPathArray
 }

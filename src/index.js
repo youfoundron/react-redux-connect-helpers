@@ -1,6 +1,9 @@
+import util from './util'
 import connectValue from './connectValue'
-import connectStateValue from './connectStateValue'
 import createActionConnector from './createActionConnector'
+import connectStateValueFactory from './connectStateValueFactory'
+
+const connectStateValue = connectStateValueFactory(util)
 
 export default {
   connectValue,

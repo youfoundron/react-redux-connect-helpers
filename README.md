@@ -36,22 +36,22 @@ const actionCreators = {
 }
 
 // 3. We can connect property 'text' as value 'Menu'
-const textPropConnector = connectValue('Menu', 'text')
+const textProp = connectValue('Menu', 'text')
 
 // 4. We can connect property 'active' as value at state.menu.active
-const activePropConnector = connectStateValue(['menu', 'active'], 'active')
+const activeProp = connectStateValue(['menu', 'active'], 'active')
 
 // 5. We can create an action connecting helper for our actionCreators
 const connectAction = createActionConnector(actionCreators)
 
 // 6. And then connect property 'onClick' as a bound action creator toggleMenuActiveState
-const onClickPropConnector = connectAction('toggleMenuActiveState', 'onClick')
+const onClickProp = connectAction('toggleMenuActiveState', 'onClick')
 
 // 7. Finally, we can connect our component with all the desired props
 const ToggleMenuButton = compose(
-  textPropConnector
-  activePropConnector,
-  onClickPropConnector
+  textProp
+  activeProp,
+  onClickProp
 )(ButtonWithText)
 
 export default ToggleMenuButton
